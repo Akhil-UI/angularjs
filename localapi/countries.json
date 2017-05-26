@@ -1,0 +1,14 @@
+{
+    "countries": [{
+            "name": "India",
+            "code": "IN"
+        },
+        {
+            "name": "Canada",
+            "code": "CA"
+        },
+                 {
+            "name": "United States",
+            "code": "USA"
+        }]
+}

@@ -1,0 +1,81 @@
+<form class="form-horizontal" name="registerForm" novalidate>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Email:</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" ng-model="rc.user.email" placeholder="Enter email" name="email" ng-required="true" ng-minlength="4" ng-maxlength="45" ng-pattern="rc.emailRegex">
+
+            <p ng-show="registerForm.email.$error.required">Email is required.</p>
+            <p ng-show="registerForm.email.$error.minlength">Email should be 4 letters minimum</p>
+            <p ng-show="registerForm.email.$error.maxlength">Email cannot exceed 15 letters </p>
+            <p ng-show="registerForm.email.$error.pattern">Incorrect email</p>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">User Name:</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" ng-model="rc.user.username" placeholder="Enter Username" name="email" ng-required="true">
+
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">First Name:</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" ng-model="rc.user.firstName" placeholder="Enter First Name">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Last Name:</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" ng-model="rc.user.lastName" placeholder="Enter Last Name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Date of Birth:</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" nb-date-picker ng-model="rc.user.dob" placeholder="Enter Dob">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Gender</label>
+        <div class="col-sm-4">
+            <input type="radio" name="gender" ng-model="rc.user.gender" value="Male"> Male
+            <input type="radio" name="gender" ng-model="rc.user.gender" value="Female">Female
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Password:</label>
+        <div class="col-sm-4">
+            <input type="password" class="form-control" ng-model="rc.user.password" placeholder="Enter password">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Phone Number:</label>
+        <div class="col-sm-4">
+            <input type="text" nb-numbers-only class="form-control" ng-model="rc.user.phone" placeholder="Enter Phone Number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Countries:</label>
+        <div class="col-sm-4">
+            <select class="form-control" ng-model="rc.user.country" ng-options="c.code for c in rc.countries"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-4">
+            <div class="checkbox">
+                <label><input type="checkbox" ng-model="rc.user.remember"> Remember me</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-f">
+            <button class="btn btn-primary" ng-disabled="registerForm.$invalid" ng-click="rc.registerUser()">Submit</button>
+        </div>
+    </div>
+</form>
+<div nb-details detail="rc.user"></div>

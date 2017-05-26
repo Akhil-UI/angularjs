@@ -1,0 +1,51 @@
+<div>
+    <div class="row">
+        <div class='col-md-3'>
+            <input type="text" ng-model="pc.search.Model" class="form-control">
+        </div>
+        <div class='col-md-3'>
+            <input type="text" placeholder="Search By Price" ng-model="pc.search.Price" class="form-control">
+        </div>
+        <div class='col-md-3'>
+            {{pc.dateofbirth|date:'medium'}}
+        </div>
+        <!--  <select class="form-control" ng-model="pc.selectedProduct" ng-options="item.model for item in pc.products">
+            </select>-->
+
+    </div>
+    <table class="table table-striped">
+        <thead>
+
+
+            <th ng-click="pc.orderByModel()"><a href="#">model</a></th>
+            <th>Description</th>
+            <th>Price</th>
+        </thead>
+        <!--<tr ng-repeat="product in pc.products|orderBy:pc.sortBy|filter:pc.search">-->
+        <!-- column specific search-->
+
+        <!--<tr ng-repeat="product in pc.products|orderBy:pc.sortBy|filter:pc.search">-->
+        <tr ng-repeat="product in pc.products|limitTo:10">
+            <td>{{product.Model|uppercase}}</td>
+
+            <td>{{product.Description|lowercase}}</td>
+
+            <td>{{product.Price|currency:"Rs."}}</td>
+           <!-- <td><a ui-sref="main.products.detail">Detail</a></td>-->
+            <td ng-click="pc.displayDetails(product)"><a href="">Detail</a></td>
+            <td><a href=" " ng-click="pc.addProductToCart(product)"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                <a href=" " ng-click="pc.removeProductFromCart(product)">
+                <i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+    </table>
+</div>
+<!--<div ui-view></div>-->
+<!-- map the selectedProduct to detail-->
+<div nb-details detail="pc.selectedProduct"></div>
+
+
+
+
+
+

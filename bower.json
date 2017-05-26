@@ -1,0 +1,23 @@
+{
+  "name": "ekart",
+  "authors": [
+    "kiranpaturi <kiran_p@k3informatics.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47",
+    "bootstrap": "^3.3.7",
+    "ngDraggable": "^0.1.11",
+    "angular-bootstrap": "^2.5.0"
+  }
+}

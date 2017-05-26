@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default" ng-controller="headerCtrl as hc">
+  <div class="container-fluid">
+    <div class="navbar-header">
+     <!--<nb-brand-name></nb-brand-name>-->
+        <span nb-logo-name logoname="{{hc.sitename}}"> </span>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a ui-sref="main.login">Login</a></li>
+      <li><a ui-sref="main.register">Register</a></li>
+      <li><a ui-sref="main.products">Products</a></li>
+    </ul>
+   <ul class="nav navbar-nav">
+      <li><a href="#"> <i class="fa fa-shopping-bag" aria-hidden="true"></i>{{hc.cartItems.length}}</a></li>
+      </ul>
+  </div>
+</nav>
+
+<div ui-view></div>
